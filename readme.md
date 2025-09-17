@@ -13,7 +13,7 @@ A DIY bicycle datalogger made using a raspberry pi pico w (c/c++ sdk.) I thought
 ## Setup
 
 ## Webpage
-The webpage server is based on this [example] (https://github.com/krzmaz/pico-w-webserver-example/tree/main) which has a helpful [blog](https://krzmaz.com/2022-08-15-creating-a-web-server-on-raspberry-pi-pico-w-using-pico-sdk-and-lwip/) to go with it. 
+The webpage server is based on this [example](https://github.com/krzmaz/pico-w-webserver-example/tree/main) which has a helpful [blog](https://krzmaz.com/2022-08-15-creating-a-web-server-on-raspberry-pi-pico-w-using-pico-sdk-and-lwip/) to go with it. 
 
 It uses lwIP to host a basic shtml webpage with variables as tags, which is implemented in ssi.cpp. These are updated with measured values when the red stop button is pressed. The journey datasets can also be downloaded from the webpage.
 
@@ -42,7 +42,8 @@ Then the gyro angle is calculated using:
 And then a combinataion of the two is used in the complementery filter:
 
 
-
+...
+...
 
 
 This is called in the main loop where is sampled at 500Hz.
@@ -50,7 +51,7 @@ This is called in the main loop where is sampled at 500Hz.
 It doesn't work as well as I hoped it would with an inaccuracy of several degrees in readings. In the future better calibration and a kalman filter can be implemented, or maybe just the mpu6050 dm.
 
 ## Logging
-
+...
 ## Power
 The device is powered using a 3.7v lithium polymer battery and is charged using a USBC tp4056 charging board. All peripherals are powered from the Pico's regulated 3v3 supply. 
 
