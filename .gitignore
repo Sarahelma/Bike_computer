@@ -1,0 +1,41 @@
+# Build output
+/build/
+/src/*.elf
+/src/*.bin
+/src/*.hex
+/src/*.uf2
+/src/*.map
+/src/*.dis
+/src/CMakeFiles/
+src/cmake_install.cmake
+src/bike.dir/
+src/bike.bin
+src/bike.elf
+src/bike.hex
+src/bike.uf2
+src/bike.map
+src/bike.dis
+
+# CMake and Ninja files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+build.ninja
+.ninja_deps
+.ninja_log
+
+# Generated files
+*.o
+*.obj
+*.log
+
+# IDE/Editor files
+*.swp
+*.swo
+*.bak
+*.tmp
+.vscode/
+.idea/
+
+external/
+my_fsdata.c

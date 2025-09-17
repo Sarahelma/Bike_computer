@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pico W Journey Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .dashboard {
+      background: #d8f3dc;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      max-width: 850px;
+      width: 90%;
+      position: relative;
+      margin-top: 150px; 
+      z-index: 1;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #444;
+    }
+
+    .date-display {
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .download-btn {
+      background: linear-gradient(135deg, #cdb4db, #bde0fe);
+      color: #333;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.8rem 1.6rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .download-btn { 
+  background: linear-gradient(135deg, #2e7d32, #388e3c); 
+  color: #ffffff; 
+}
+
+
+
+
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 1.2rem;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .label {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+
+    .value {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    /* Bike animation fixed at top */
+    .bike {
+      position: fixed;
+      top: 30px;
+      right: -80px;
+      font-size: 3rem;
+      animation: ride 12s linear infinite;
+      z-index: 2;
+    }
+
+    @keyframes ride {
+      0%   { right: -80px; }
+      100% { right: 110%; }
+    }
+
+    /* Trees behind bike */
+    .tree {
+      position: fixed;
+      top: 40px;
+      font-size: 2rem;
+      z-index: 1;
+    }
+
+    .tree1 { left: 50px; }
+    .tree2 { left: 200px; }
+    .tree3 { left: 350px; }
+    .tree4 { left: 500px; }
+    .tree5 { left: 650px; }
+    .tree6 { left: 800px; }
+    .tree7 { left: 950px; }
+    .tree8 { left: 1100px; }
+    .tree9 { left: 1250px; }
+    .tree10 { left: 1400px; }
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Trees fixed at top -->
+  <div class="tree tree1">🌳</div>
+  <div class="tree tree2">🌳</div>
+  <div class="tree tree3">🌳</div>
+  <div class="tree tree4">🌳</div>
+  <div class="tree tree5">🌳</div>
+  <div class="tree tree6">🌳</div>
+  <div class="tree tree7">🌳</div>
+  <div class="tree tree8">🌳</div>
+  <div class="tree tree9">🌳</div>
+  <div class="tree tree10">🌳</div>
+
+  <!-- bike animation -->
+  <div class="bike">🚴🏻‍♀️</div>
+
+  <div class="dashboard">
+    <h1>Journey Dashboard</h1>
+
+    <div class="date-display"><!--#current_date--></div>
+
+    <div class="button-container">
+      <button class="download-btn">⬇ Download Dataset</button>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="label">Distance Travelled</div>
+        <div class="value"><!--#distance--></div>
+      </div>
+      <div class="card">
+        <div class="label">Journey Time</div>
+        <div class="value"><!--#time--></div>
+      </div>
+      <div class="card">
+        <div class="label">Top Speed</div>
+        <div class="value"><!--#speed--></div>
+      </div>
+      <div class="card">
+        <div class="label">Top Incline</div>
+        <div class="value"><!--#incline--></div>
+      </div>
+    </div>
+
+
+  </div>
+
+</body>
+</html>
